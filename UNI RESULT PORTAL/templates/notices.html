@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices - ITM Ravenshaw</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #9F1D35;
+            --accent: #C41E3A;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://image-static.collegedunia.com/public/reviewPhotos/1067113/1000040197.jpg') center/cover no-repeat fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.7rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .logout-btn {
+            background: #c43879;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .logout-btn:hover {
+            background: #b32121;
+        }
+
+        /* Rest of your hero and features styles (same as previous) */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding-top: 80px; position: relative; }
+        .hero::before { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.35); z-index:1; }
+        .hero-content { position: relative; z-index:2; max-width:900px; padding:0 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.2rem; margin-bottom:20px; text-shadow: 0 4px 30px rgba(0,0,0,0.6); }
+        .cta-buttons { margin-top:40px; }
+        .btn { padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.1rem; margin:0 12px; transition:all 0.4s; }
+        .btn-primary { background:white; color:var(--primary); }
+        .btn-outline { border:2px solid white; color:white; }
+        .features { padding:100px 20px; background:rgba(255,255,255,0.95); text-align:center; }
+        footer { background:rgba(0,0,0,0.9); color:white; text-align:center; padding:50px 20px; }
+
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .content {
+            max-width: 1100px;
+            margin: 100px auto 50px;
+            padding: 50px 40px;
+            background: rgba(255,255,255,0.96);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-size: 2.6rem;
+        }
+        
+        .notice {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 6px solid var(--primary);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .notice:hover {
+            transform: translateY(-5px);
+        }
+        
+        .notice-date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .notice h3 {
+            margin: 10px 0;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ravenshaw University - ITM</div>
+            <ul class="nav-links" style="display:flex; gap:30px; list-style:none;">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/results">Results</a></li>
+                <li><a href="/notices">Notices</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Important Notices & Announcements</h1>
+        
+        <div class="notice">
+            <div class="notice-date">05 July 2026</div>
+            <h3>End Semester Examination Schedule Released</h3>
+            <p>Theory and Practical examinations for Even Semester will commence from 20th July 2026. Detailed timetable available on the portal.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">03 July 2026</div>
+            <h3>Project Submission Deadline Extended</h3>
+            <p>Last date for B.Sc. ITM final year project submission has been extended to 15th July 2026.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">28 June 2026</div>
+            <h3>Campus Placement Drive - TCS &amp; Infosys</h3>
+            <p>Final year students are invited for the upcoming placement drive on 12th July 2026. Register immediately.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">25 June 2026</div>
+            <h3>Workshop on Artificial Intelligence &amp; Machine Learning</h3>
+            <p>A two-day workshop will be conducted on 8-9 July 2026. All students are encouraged to participate.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">20 June 2026</div>
+            <h3>Fee Payment Reminder</h3>
+            <p>Last date for payment of Even Semester fees with late fine is 10th July 2026.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">18 June 2026</div>
+            <h3>Internship Opportunity at Wipro</h3>
+            <p>Pre-final year students can apply for 6-week summer internship. Deadline: 5th July 2026.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">15 June 2026</div>
+            <h3>Faculty Development Program</h3>
+            <p>FDP on "Emerging Trends in Data Science" scheduled from 22nd to 26th June 2026.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">10 June 2026</div>
+            <h3>Student Council Election Results</h3>
+            <p>Newly elected student council for the session 2026-27 has been announced.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">05 June 2026</div>
+            <h3>Library Book Return Notice</h3>
+            <p>All students who have borrowed books must return them by 15th June 2026 to avoid fine.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">01 June 2026</div>
+            <h3>Orientation Program for New Batch</h3>
+            <p>Orientation for newly admitted B.Sc. ITM students will be held on 20th July 2026.</p>
+        </div>
+        
+        <div class="notice">
+            <div class="notice-date">28 May 2026</div>
+            <h3>Hackathon 2026 Announcement</h3>
+            <p>Department is organizing "InnovateX 2026" Hackathon. Team registration open till 10th July.</p>
+        </div>
+    </div>
+</body>
+</html>

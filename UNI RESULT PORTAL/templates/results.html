@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - ITM Ravenshaw</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #9F1D35;
+            --accent: #C41E3A;
+            --light: #f8f0f2;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://image-static.collegedunia.com/public/reviewPhotos/1067113/1000040197.jpg') center/cover no-repeat fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        
+        nav {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .logout-btn {
+            background: #c43879;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .logout-btn:hover {
+            background: #b32121;
+        }
+
+        /* Rest of your hero and features styles (same as previous) */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding-top: 80px; position: relative; }
+        .hero::before { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.35); z-index:1; }
+        .hero-content { position: relative; z-index:2; max-width:900px; padding:0 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.2rem; margin-bottom:20px; text-shadow: 0 4px 30px rgba(0,0,0,0.6); }
+        .cta-buttons { margin-top:40px; }
+        .btn { padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.1rem; margin:0 12px; transition:all 0.4s; }
+        .btn-primary { background:white; color:var(--primary); }
+        .btn-outline { border:2px solid white; color:white; }
+        .features { padding:100px 20px; background:rgba(255,255,255,0.95); text-align:center; }
+        footer { background:rgba(0,0,0,0.9); color:white; text-align:center; padding:50px 20px; }
+
+        
+        .content {
+            max-width: 1100px;
+            margin: 110px auto 50px;
+            padding: 50px 40px;
+            background: rgba(255,255,255,0.97);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2.4rem;
+        }
+        
+        .cgpa-banner {
+            background: linear-gradient(135deg, var(--light), #f5e6ea);
+            padding: 28px;
+            border-radius: 20px;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 35px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(159, 29, 53, 0.15);
+        }
+        
+        .controls { display: flex; justify-content: center; margin-bottom: 35px; }
+        
+        button {
+            padding: 14px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: white;
+        }
+        
+        .semester-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .tab {
+            padding: 14px 34px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.4s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .tab:hover, .tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .result-card {
+            display: none;
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .result-card.active { display: block; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .sem-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .sgpa {
+            text-align: right;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0 15px;
+            padding: 12px 20px;
+            background: #f8f0f2;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 16px 14px;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) { background-color: #f9f5f7; }
+        tr:hover { background-color: #f0e6ea; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ravenshaw University - ITM</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/results">Results</a></li>
+                <li><a href="/notices">Notices</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Semester Results for {{ name | default('Student') }} ({{ rollno }})</h1>
+        
+        <div class="cgpa-banner">
+            🎓 Overall CGPA: <strong>{{ cgpa }}</strong> / 10.0
+        </div>
+        
+        <div class="controls">
+            <button onclick="window.location.href='/download_results'" class="download-btn">
+                📥 Download All Results (PDF)
+            </button>
+        </div>
+        
+        <div class="semester-tabs" id="tabs"></div>
+        
+        {% if semesters %}
+            {% for sem, subjects in semesters.items() %}
+            <div class="result-card" id="semester-{{ sem }}">
+                <h3 class="sem-title">Semester {{ sem }} - B.Sc. ITM</h3>
+                
+                <table>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Internal</th>
+                        <th>Practical</th>
+                        <th>Theory</th>
+                        <th>Total</th>
+                        <th>Grade</th>
+                    </tr>
+                    {% for sub in subjects %}
+                    <tr>
+                        <td><strong>{{ sub.subject }}</strong></td>
+                        <td>{{ sub.internal }}</td>
+                        <td>{{ sub.practical }}</td>
+                        <td>{{ sub.theory }}</td>
+                        <td><strong>{{ sub.total }}</strong></td>
+                        <td><strong>{{ sub.grade }}</strong></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                
+                <!-- Semester SGPA -->
+                <div class="sgpa">
+                    Semester SGPA: <strong id="sgpa-{{ sem }}"></strong>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align:center; font-size:1.2rem; color:#666;">No results found.</p>
+        {% endif %}
+    </div>
+
+    <script>
+        function calculateSGPA(subjects) {
+            if (!subjects || subjects.length === 0) return 0;
+            let totalPoints = 0;
+            const gradePoints = { 'O': 10, 'A+': 9, 'A': 8, 'B+': 7, 'B': 6 };
+            
+            subjects.forEach(sub => {
+                const gp = gradePoints[sub.grade] || 6;
+                totalPoints += gp * 4;   // Assuming 4 credits per subject
+            });
+            
+            return (totalPoints / (subjects.length * 4)).toFixed(2);
+        }
+
+        function initTabs() {
+            const tabsContainer = document.getElementById('tabs');
+            const cards = document.querySelectorAll('.result-card');
+           
+            if (cards.length === 0) return;
+           
+            cards.forEach(card => {
+                const sem = card.id.split('-')[1];
+                const tab = document.createElement('div');
+                tab.className = 'tab';
+                tab.textContent = `Semester ${sem}`;
+                tab.dataset.sem = sem;
+                tab.onclick = () => showSemester(sem);
+                tabsContainer.appendChild(tab);
+            });
+           
+            const firstSem = cards[0].id.split('-')[1];
+            showSemester(firstSem);
+        }
+       
+        function showSemester(sem) {
+            document.querySelectorAll('.result-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            const activeCard = document.getElementById(`semester-${sem}`);
+            if (activeCard) {
+                activeCard.classList.add('active');
+                
+                // Calculate & display SGPA for this semester
+                const table = activeCard.querySelector('table');
+                if (table) {
+                    const rows = table.querySelectorAll('tr');
+                    const subjects = [];
+                    for (let i = 1; i < rows.length; i++) {
+                        const cells = rows[i].querySelectorAll('td');
+                        if (cells.length >= 6) {
+                            subjects.push({
+                                grade: cells[5].textContent.trim()
+                            });
+                        }
+                    }
+                    const sgpa = calculateSGPA(subjects);
+                    const sgpaEl = document.getElementById(`sgpa-${sem}`);
+                    if (sgpaEl) sgpaEl.textContent = sgpa;
+                }
+            }
+            
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.sem === sem);
+            });
+        }
+       
+        window.onload = initTabs;
+    </script>
+</body>
+</html>

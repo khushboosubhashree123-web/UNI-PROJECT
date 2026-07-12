@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ITM Ravenshaw</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #9F1D35;
+            --accent: #C41E3A;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://image-static.collegedunia.com/public/reviewPhotos/1067113/1000040197.jpg') center/cover no-repeat fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        
+        nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+         .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .logout-btn {
+            background: #c43879;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .logout-btn:hover {
+            background: #b32121;
+        }
+
+        /* Rest of your hero and features styles (same as previous) */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding-top: 80px; position: relative; }
+        .hero::before { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.35); z-index:1; }
+        .hero-content { position: relative; z-index:2; max-width:900px; padding:0 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.2rem; margin-bottom:20px; text-shadow: 0 4px 30px rgba(0,0,0,0.6); }
+        .cta-buttons { margin-top:40px; }
+        .btn { padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.1rem; margin:0 12px; transition:all 0.4s; }
+        .btn-primary { background:white; color:var(--primary); }
+        .btn-outline { border:2px solid white; color:white; }
+        .features { padding:100px 20px; background:rgba(255,255,255,0.95); text-align:center; }
+        footer { background:rgba(0,0,0,0.9); color:white; text-align:center; padding:50px 20px; }
+
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .content {
+            max-width: 1100px;
+            margin: 100px auto 50px;
+            padding: 60px;
+            background: rgba(255,255,255,0.97);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 18px;
+            font-size: 1.6rem;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+        
+        p {
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+        
+        ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ravenshaw University - ITM</div>
+            <ul class="nav-links" style="display:flex; gap:30px; list-style:none;">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/results">Results</a></li>
+                <li><a href="/notices">Notices</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>About Department of Information Technology & Management</h1>
+        
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>The Department of Information Technology and Management (ITM) at Ravenshaw University, Cuttack, is a premier center of excellence dedicated to nurturing skilled professionals in the rapidly evolving domains of Information Technology and Business Management.</p>
+            <p>Established with a vision to bridge the gap between technology and management, the department offers industry-aligned programs that combine technical expertise with managerial acumen.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Vision & Mission</h2>
+            <p><strong>Vision:</strong> To be a leading institution in Eastern India, producing innovative leaders and technocrats who drive digital transformation and sustainable business growth.</p>
+            <p><strong>Mission:</strong> To provide high-quality education, foster research and innovation, and develop ethical professionals capable of addressing real-world challenges in IT and Management.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Academic Programs</h2>
+            <ul>
+                <li><strong>B.Sc. in Information Technology & Management (ITM)</strong> – 3 Years (6 Semesters)</li>
+                <li><strong>M.Sc. / MBA in Information Technology & Management</strong> (Proposed)</li>
+                <li>Certificate & Diploma courses in Data Science, Cyber Security, Digital Marketing, and Business Analytics.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Key Highlights</h2>
+            <ul>
+                <li>Industry-oriented curriculum with focus on AI, Machine Learning, Cloud Computing, and Business Intelligence.</li>
+                <li>State-of-the-art computer laboratories and smart classrooms.</li>
+                <li>Strong industry collaboration with companies like TCS, Infosys, Wipro, and Deloitte.</li>
+                <li>Excellent placement record with students placed in top IT & Management firms.</li>
+                <li>Regular workshops, hackathons, and guest lectures by industry experts.</li>
+                <li>Focus on research, innovation, and entrepreneurship development.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Facilities</h2>
+            <p>The department is equipped with modern infrastructure including advanced computing labs, high-speed internet, digital library access, and dedicated incubation center for student startups.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Why Choose ITM Ravenshaw?</h2>
+            <p>Our holistic approach ensures that graduates are not only technically proficient but also possess strong leadership, communication, and problem-solving skills — making them highly sought after by employers across the globe.</p>
+        </div>
+        
+        <p style="text-align:center; font-style:italic; margin-top:40px; color:#555;">
+            "Empowering Future Leaders in Technology and Management"
+        </p>
+    </div>
+</body>
+</html>

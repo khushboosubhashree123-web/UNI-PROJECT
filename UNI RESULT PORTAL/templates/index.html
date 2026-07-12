@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravenshaw University ITM - Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary: #9F1D35;
+            --accent: #C41E3A;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, rgba(77, 41, 48, 0.92), rgba(190, 38, 63, 0.85)),
+                        url('https://media.assettype.com/psuwatch%2F2023-09%2F16dd819b-2b9c-4cf8-98a3-8f19309033d8%2FNBCC_Image_2___PSU_Watch.jpg?w=640&auto=format%2Ccompress') center/cover no-repeat fixed;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+         .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .logout-btn {
+            background: #c43879;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .logout-btn:hover {
+            background: #b32121;
+        }
+
+        /* Rest of your hero and features styles (same as previous) */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding-top: 80px; position: relative; }
+        .hero::before { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.35); z-index:1; }
+        .hero-content { position: relative; z-index:2; max-width:900px; padding:0 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.2rem; margin-bottom:20px; text-shadow: 0 4px 30px rgba(0,0,0,0.6); }
+        .cta-buttons { margin-top:40px; }
+        .btn { padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.1rem; margin:0 12px; transition:all 0.4s; }
+        .btn-primary { background:white; color:var(--primary); }
+        .btn-outline { border:2px solid white; color:white; }
+        .features { padding:100px 20px; background:rgba(255,255,255,0.95); text-align:center; }
+        footer { background:rgba(0,0,0,0.9); color:white; text-align:center; padding:50px 20px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4jBAdHbRjhFecc06s5KWnj2I5eRycX_feZQ&s" style="float: left;width: 50px; height: 50px;margin-right: 20px; margin-bottom: 10px;">Ravenshaw University - ITM</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/results">Results</a></li>
+                <li><a href="/notices">Notices</a></li>
+                
+                {% if session and session.get('rollno') %}
+                    <li><span style="color:var(--primary); font-weight:500;">Welcome, {{ session.name }}</span></li>
+                    <li><a href="/logout" class="logout-btn">Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to ITM Student Portal</h1>
+            <p>Department of Information Technology & Management<br>Ravenshaw University, Cuttack</p>
+            
+            <div class="cta-buttons">
+                <a href="/results" class="btn btn-primary">View Results</a>
+                <a href="/notices" class="btn btn-outline">Latest Notices</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (same as before) -->
+    <section class="features">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 20px;">Why Choose ITM?</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 50px;">Empowering future leaders with cutting-edge technology and management skills.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 60px auto 0;">
+                <div style="background:white; padding:40px 25px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                    <h3>📊 Academic Excellence</h3>
+                    <p>Access your semester results instantly.</p>
+                </div>
+                <div style="background:white; padding:40px 25px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                    <h3>📢 Important Updates</h3>
+                    <p>Stay informed with latest notices.</p>
+                </div>
+                <div style="background:white; padding:40px 25px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                    <h3>🎓 Career Focused</h3>
+                    <p>Industry-relevant curriculum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ravenshaw University - Department of Information Technology & Management</p>
+    </footer>
+
+</body>
+</html>
